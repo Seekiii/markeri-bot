@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markeri | Discord Bot</title>
+    <meta name="description" content="Umjesto da banujete problematične korisnike, pošaljite ih na markere. ">
+    <meta name="author" content="šeki">
+    <meta name="theme-color" content="#2394b4">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seekiii.github.io/markeri-bot/">
+    <meta property="og:title" content="Markeri | Discord Bot">
+    <meta property="og:description" content="Umjesto da banujete problematične korisnike, pošaljite ih na markere.">
+    <meta property="og:site_name" content="Markeri | Discord Bot">
+    <meta property="og:locale" content="bs_BA">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Markeri | Discord Bot">
+    <meta name="twitter:description" content="Umjesto da banujete problematične korisnike, pošaljite ih na markere.">
+
+    <link rel="canonical" href="https://seekiii.github.io/markeri-bot/">
+    <link rel="alternate" hreflang="hr" href="https://seekiii.github.io/markeri-bot/">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    
+    
+    <style>
+        body {
+            background-color: #05070a;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .command-row {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+        }
+        .command-row:hover {
+            background-color: rgba(255, 255, 255, 0.03);
+            transform: translateX(4px);
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .hero-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% -20%, rgba(68, 205, 244, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#44cdf4]/30 selection:text-white">
+    <div class="hero-glow"></div>
+
+    <section id="hero" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 md:px-6 text-center">
+        <div data-aos="fade-up" data-aos-duration="1200">
+            <span class="inline-block px-3 md:px-4 py-1 text-[9px] md:text-[10px] font-bold tracking-[0.15em] md:tracking-[0.2em] text-[#44cdf4] border border-[#44cdf4]/20 rounded mb-6 md:mb-8 bg-[#44cdf4]/5">
+                V1.0 BETA
+            </span>
+            <h1 class="text-6xl md:text-6xl lg:text-9xl font-extrabold tracking-tighter text-white mb-6 md:mb-8">
+                Markeri <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-[#44cdf4]">Bot</span>
+            </h1>
+            <p class="text-gray-400 text-base md:text-lg lg:text-xl max-w-xl mx-auto mb-8 md:mb-12 font-light leading-relaxed px-2">
+                Umjesto da banujete problematične korisnike, pošaljite ih na markere. 
+                Sistem discipline koji zapravo radi.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 items-center max-w-lg mx-auto justify-center">
+                <a href="https://discord.com/oauth2/authorize?client_id=1455500391205834885" target="_blank" rel="noopener noreferrer" class="w-fit sm:w-auto group relative px-6 md:px-8 py-2.5 md:py-3 bg-[#22ceff] text-black font-semibold rounded text-sm md:text-base overflow-hidden transition-all hover:scale-105 active:scale-95">
+                    Dodaj na Discord
+                </a>
+                <a href="#komande" class="w-fit sm:w-auto group relative px-6 md:px-8 py-2.5 md:py-3 bg-[#ffffff10] hover:bg-[#ffffff15] text-white font-normal rounded text-sm md:text-base overflow-hidden transition-all active:scale-95">
+                    Pogledaj komande
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="komande" class="max-w-6xl mx-auto py-16 md:py-24 px-4 md:px-6">
+        <div class="mb-6" data-aos="fade-right">
+            <h2 class="text-xl md:text-2xl font-bold text-white tracking-tight flex items-center gap-2 md:gap-3">
+                <span class="w-6 md:w-8 h-[1px] bg-[#44cdf4]"></span>
+                Lista Komandi
+            </h2>
+        </div>
+        
+        <div class="space-y-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-red-500/50 shadow-[0_0_8px_rgba(239,68,68,0.4)]"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/postavke setup</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Automatski postavlja marker kanale, role i permisije.
+                </div>
+            </div>
+
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-red-500/50 shadow-[0_0_8px_rgba(239,68,68,0.4)]"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/postavke setup-restart</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Brise postojece kanale, role i permisije i ponovno ih kreira.
+                </div>
+            </div>
+
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-[#44cdf4]/30"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/markeri daj</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Daj markere korisniku. Korisnik gubi role i dobija marker rolu.
+                </div>
+            </div>
+
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-[#44cdf4]/30"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/markeri skini</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Skini sve markere korisniku i vrati mu prethodne role.
+                </div>
+            </div>
+
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-[#44cdf4]/30"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/markeri dodaj</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Dodaj dodatne markere korisniku koji već ima markere.
+                </div>
+            </div>
+
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-[#44cdf4]/30"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/markeri oduzmi</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Oduzmi markere korisniku (bez vraćanja prethodnih rola).
+                </div>
+            </div>
+
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-red-500/50"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/postavke bot nickname</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Promijeni nadimak bota na ovom serveru.
+                </div>
+            </div>
+
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-red-500/50"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/postavke bot avatar</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Promijeni avatar bota na ovom serveru.
+                </div>
+            </div>
+
+            <div class="command-row p-3 md:p-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 border-b border-white/5 group">
+                <div class="md:w-1/3 flex items-center gap-3 md:gap-4">
+                    <div class="w-2 h-2 rounded bg-red-500/50"></div>
+                    <span class="mono text-xs md:text-sm text-[#44cdf4] font-medium">/postavke bot banner</span>
+                </div>
+                <div class="flex-1 text-xs md:text-sm text-gray-500 group-hover:text-gray-300 transition-colors md:text-right">
+                    Promijeni banner bota na ovom serveru.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="changelog" class="max-w-6xl mx-auto py-16 md:py-24 px-4 md:px-6 mb-12">
+        <div class="mb-12 md:mb-16" data-aos="fade-right">
+            <h2 class="text-xl md:text-2xl font-bold text-white tracking-tight flex items-center gap-2 md:gap-3">
+                <span class="w-6 md:w-8 h-[1px] bg-[#44cdf4]"></span>
+                Changelog
+            </h2>
+        </div>
+
+        <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
+            <!-- v1.0 -->
+            <div class="group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-[#44cdf4] shadow-[0_0_8px_rgba(68,205,244,0.5)]"></div>
+                    <h3 class="text-lg md:text-xl font-semibold text-white">v1.0 BETA</h3>
+                    <span class="text-xs md:text-sm text-gray-500 ml-auto">16.03.2026</span>
+                </div>
+                <div class="ml-6 space-y-2 text-sm md:text-base text-gray-400">
+                    <p>- Markeri Bot</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 md:py-12 px-4 md:px-6 text-center">
+        <div class="max-w-4xl mx-auto border-t border-white/5 pt-6 md:pt-8">
+            <p class="text-[10px] md:text-[11px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-gray-600">
+                Created with ❤️ by <a href="https://seekiii.github.io" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#44cdf4] transition-colors">šeki</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ 
+            duration: 800, 
+            once: true,
+            easing: 'ease-out'
+        });
+        lucide.createIcons();
+    </script>
+</body>
+</html>
